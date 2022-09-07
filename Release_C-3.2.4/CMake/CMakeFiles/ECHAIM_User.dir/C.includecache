@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lap1dem/dev-python/echaim/Release_C-3.2.4/lib/ECHAIM.c
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+string.h
+-
+getDir.h
+/home/lap1dem/dev-python/echaim/Release_C-3.2.4/lib/getDir.h
+date.h
+/home/lap1dem/dev-python/echaim/Release_C-3.2.4/lib/date.h
+ECHAIM.h
+/home/lap1dem/dev-python/echaim/Release_C-3.2.4/lib/ECHAIM.h
+global.h
+/home/lap1dem/dev-python/echaim/Release_C-3.2.4/lib/global.h
+math.h
+-
+memwatch.h
+/home/lap1dem/dev-python/echaim/Release_C-3.2.4/lib/memwatch.h
+
+/home/lap1dem/dev-python/echaim/Release_C-3.2.4/lib/ECHAIM.h
+
+/home/lap1dem/dev-python/echaim/Release_C-3.2.4/lib/date.h
+
+/home/lap1dem/dev-python/echaim/Release_C-3.2.4/lib/getDir.h
+
+/home/lap1dem/dev-python/echaim/Release_C-3.2.4/lib/global.h
+

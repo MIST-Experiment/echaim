@@ -66,7 +66,7 @@ add_library (${project_name} SHARED ${LIB_SOURCES})
 target_link_libraries(${project_name} curl)
 
 #change the runtime output directory
-get_filename_component(PARENT_DIR ${CMAKE_CURRENT_SOURCE_DIR} DIRECTORY)
+get_filename_component(PARENT_DIR . DIRECTORY)
 message(${PARENT_DIR})
 set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PARENT_DIR})
 

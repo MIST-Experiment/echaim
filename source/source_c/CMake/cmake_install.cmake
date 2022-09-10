@@ -1,4 +1,4 @@
-# Install script for directory: /home/lap1dem/dev-python/echaim/Release_C-3.2.4/CMake
+# Install script for directory: /home/lap1dem/dev-python/echaim/source_c/CMake
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

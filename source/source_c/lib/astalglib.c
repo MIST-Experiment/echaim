@@ -94,7 +94,7 @@ double AstAlg_apparent_solar_longitude(double jd) {
 
    No attempt is made to check the validity of the arguments so you can
    create a garbage result if you give it nonsense values like setting
-   the day to 1000 or the hour to 50, etc.
+   the day to 1000 or the hour to 50, model_data.
 */
 
 double AstAlg_dday(int day, int hour, int minute, int second) {

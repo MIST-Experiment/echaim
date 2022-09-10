@@ -265,7 +265,7 @@ int AACGM_v2_Rylm(double colat, double lon, int order, double *ylmval)
    * longitude dependence, i.e., sin/cos (phi).
    *
    * for each m value 1 to order-2 we have P_mm and P_m+1,m so we can compute
-   * P_m+2,m; P_m+3,m; etc.
+   * P_m+2,m; P_m+3,m; model_data.
    *
    */
 

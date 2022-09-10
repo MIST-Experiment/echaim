@@ -23,10 +23,10 @@ char **ERRORCODES = NULL;
 int l0last;
 
 //The error codes will be a 2d array
-//[number or outputs (locations,times, etc), 10 (number or error characters plus string terminator)]
+//[number or outputs (locations,times, model_data), 10 (number or error characters plus string terminator)]
 
 //Initialize the array
-//l0 is number or inputted times/locations etc
+//l0 is number or inputted times/locations model_data
 //**This array must be freed at the end of the program**
 void logErrors(int l0)
 {

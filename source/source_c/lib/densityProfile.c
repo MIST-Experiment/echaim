@@ -32,8 +32,8 @@
 //altitudes (length (l1)
 //all altitudes are applied to each lat/lon pair
 //output is 2d array [l0,l1]
-double ** densityProfile(double *lat, double *lon, double *year, double *month, double *day, \
-						double *hour, double *min, double *sec, int storm, int precip, int dregion, int l0, double *alt, int l1, int err)
+double ** densityProfile(double *lat, double *lon, int *year, int *month, int *day, \
+						int *hour, int *min, int *sec, int storm, int precip, int dregion, int l0, double *alt, int l1, int err)
 {
 	//set variables
 	double **output; //density profile output, length = [l0,l1,l2]
@@ -41,7 +41,7 @@ double ** densityProfile(double *lat, double *lon, double *year, double *month, 
 	double *jd, *mlat, *mlon, *mlt; //jd array
 	double *rPert; //pert output
 	double **rPre, **rDreg; //precip model output
-	
+
 	//allocate memory
 	jd = (double *)calloc(l0, sizeof(double));
 	mlat = (double *)calloc(l0, sizeof(double));
@@ -80,21 +80,21 @@ double ** densityProfile(double *lat, double *lon, double *year, double *month, 
 	
 	//allocate memory for output
 	output = (double **) malloc(sizeof(double *)*l0);
-	for (int i=0; i<l0; i++) 
+	for (int i=0; i<l0; i++)
 	{
 		output[i] = (double *) malloc(sizeof(double)*l1);
-		
+
 		//set jdin
 		jd[i] = julianDate(year[i], month[i], day[i], hour[i], min[i], sec[i]);
-	
+
 		//get mag coords
 		double *m;
-		
+
 		m = getMagCoords(jd[i], lat[i], lon[i], 300.0, 1);
 		mlat[i] = m[0];
 		mlon[i] = m[1];
 		mlt[i] = m[2];
-		
+
 		free(m);
 	}
 
@@ -113,7 +113,7 @@ double ** densityProfile(double *lat, double *lon, double *year, double *month, 
 		double map = maxAP(1,NULL);
 		double mindst = maxDST(-1,NULL);
 		double minap = maxAP(-1,NULL);
-		
+
 		for (int i=0; i<l0; i++)
 		{
 			
@@ -123,17 +123,17 @@ double ** densityProfile(double *lat, double *lon, double *year, double *month, 
 			if (mig12 == 0 || jd[i] > mig12) ERRORCODES[i][5] = 'G'; else ERRORCODES[i][5]=' ';
 			if (mlat[i] < 50.0) ERRORCODES[i][6] = 'H'; else ERRORCODES[i][6]=' ';
 			if (mlat[i] < 45.0) ERRORCODES[i][7] = 'I'; else ERRORCODES[i][7]=' ';
-			
+
 			if (storm)
 			{
 				if (mae == 0 || jd[i] > mae) ERRORCODES[i][0] = 'A'; \
 					else if (jd[i] >= 2442778.5 && jd[i] <= 2443509.5) ERRORCODES[i][0] = 'A'; else ERRORCODES[i][0]=' ';
 				if (mpc == 0 || jd[i] > mpc) ERRORCODES[i][1] = 'B'; \
-				else if (jd[i] >= 2447161.5 && jd[i] <= 2442778.5) 
+				else if (jd[i] >= 2447161.5 && jd[i] <= 2442778.5)
 				{
 					ERRORCODES[i][0] = 'A';
 					ERRORCODES[i][1] = 'B';
-					
+
 				}else ERRORCODES[i][0]=' ';
 				if (map == 0 || jd[i] > map || jd[i] < minap) ERRORCODES[i][8] = 'J'; else ERRORCODES[i][8]=' ';
 				if (mdst == 0 || jd[i] > mdst || jd[i] < mindst) ERRORCODES[i][9] = 'K'; else ERRORCODES[i][9]=' ';
@@ -228,18 +228,6 @@ double ** densityProfile(double *lat, double *lon, double *year, double *month, 
 		for (int i=0; i<l0; i++) {free(rPre[i]);}
 		free(rPre);
 	}
-
-	printf("Output of densityProfile function \n");
-
-	for (int i=0; i<l0; i++)
-	{
-		for (int j=0; j<l1; j++)
-		{
-			printf("%f ", output[i][j]);
-		}
-	}
-	printf("\n");
-
 	return output;
 	
 }

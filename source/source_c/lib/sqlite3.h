@@ -2820,7 +2820,7 @@ SQLITE_API int sqlite3_set_authorizer(
 ** callback function will be parameters or NULL depending on which of these
 ** codes is used as the second parameter.  ^(The 5th parameter to the
 ** authorizer callback is the name of the database ("main", "temp",
-** etc.) if applicable.)^  ^The 6th parameter to the authorizer callback
+** model_data.) if applicable.)^  ^The 6th parameter to the authorizer callback
 ** is the name of the inner-most trigger or view that is responsible for
 ** the access attempt or NULL if this access attempt is directly from
 ** top-level SQL code.
@@ -4476,7 +4476,7 @@ SQLITE_API int sqlite3_data_count(sqlite3_stmt *pStmt);
 ** described above, or until [sqlite3_step()] or [sqlite3_reset()] or
 ** [sqlite3_finalize()] is called.  ^The memory space used to hold strings
 ** and BLOBs is freed automatically.  Do not pass the pointers returned
-** from [sqlite3_column_blob()], [sqlite3_column_text()], etc. into
+** from [sqlite3_column_blob()], [sqlite3_column_text()], model_data. into
 ** [sqlite3_free()].
 **
 ** ^(If a memory allocation error occurs during the evaluation of any
@@ -9344,7 +9344,7 @@ SQLITE_API int sqlite3session_changeset(
 ** does not have a primary key, this function is a no-op (but does not return
 ** an error).
 **
-** Argument zFromDb must be the name of a database ("main", "temp" etc.)
+** Argument zFromDb must be the name of a database ("main", "temp" model_data.)
 ** attached to the same database handle as the session object that contains 
 ** a table compatible with the table attached to the session by this function.
 ** A table is considered compatible if it:

@@ -1,1 +1,0 @@
-/usr/bin/cc -g "CMakeFiles/ECHAIM_User.dir/home/lap1dem/dev-python/echaim/Release_C-3.2.4/lib/ECHAIM.c.o" -o /home/lap1dem/dev-python/echaim/Release_C-3.2.4/ECHAIM_User  -Wl,-rpath,/home/lap1dem/dev-python/echaim/Release_C-3.2.4/CMake libECHAIM.so -lpthread -ldl -lcurl -lm 

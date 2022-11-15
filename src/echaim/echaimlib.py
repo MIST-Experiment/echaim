@@ -32,4 +32,5 @@ except OSError:
     try:
         iri2016, iri2020 = _import_libs()
     except OSError:
-        raise ImportError("Could not import IRI libraries. Please make sure you have installed the package correctly.")
+        raise ImportError("Could not import E-CHAIM libraries. Please make sure you have installed the package "
+                          "correctly.")

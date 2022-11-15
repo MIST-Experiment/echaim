@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "echaim"
-version = "0.1.0.dev"
+version = "0.1.1.dev"
 description = ""
 authors = ["lap1dem <vadym.bidula@gmail.com>"]
 readme = "README.md"
+build = "build.py"
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -15,5 +16,5 @@ tqdm = "^4.64.1"
 setuptools-cpp = "^0.1.0"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["cmake", "poetry-core",  "wheel", "setuptools-cpp"]
 build-backend = "poetry.core.masonry.api"

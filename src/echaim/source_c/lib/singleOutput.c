@@ -22,8 +22,8 @@
 
 //routine to get and return NmF2 for a given location and time
 //arrays are the same length l0
-double * NmF2(double *lat, double *lon, double *year, double *month, double *day, \
-				double *hour, double *min, double *sec, int l0, int err)
+double * NmF2(double *lat, double *lon, int *year, int *month, int *day, \
+				int *hour, int *min, int *sec, int l0, int err)
 {
 	//set variables
 	double *output; //NmF2 output, length = l0
@@ -36,7 +36,7 @@ double * NmF2(double *lat, double *lon, double *year, double *month, double *day
 	mlon = (double *)calloc(l0, sizeof(double));
 	
 	//set the directory from the config file
-	getDir();
+//	getDir();
 	
 	//sqlite3 variables
 	char cwd[1024]; //directory, sql error
@@ -135,8 +135,8 @@ double * NmF2(double *lat, double *lon, double *year, double *month, double *day
 
 //routine to get and return NmF2 for a given location and time
 //arrays are the same length l0
-double * NmF2Storm(double *lat, double *lon, double *year, double *month, double *day, \
-				double *hour, double *min, double *sec, int l0, int err)
+double * NmF2Storm(double *lat, double *lon, int *year, int *month, int *day, \
+				int *hour, int *min, int *sec, int l0, int err)
 {
 	//set variables
 	double *output; //NmF2 output, length = l0
@@ -150,7 +150,7 @@ double * NmF2Storm(double *lat, double *lon, double *year, double *month, double
 	mlon = (double *)calloc(l0, sizeof(double));
 	
 	//set the directory from the config file
-	getDir();
+//	getDir();
 	
 	//sqlite3 variables
 	char cwd[1024]; //directory, sql error
@@ -264,8 +264,8 @@ double * NmF2Storm(double *lat, double *lon, double *year, double *month, double
 
 //routine to get and return HmF2 for a given location and time
 //arrays are the same length l0
-double * HmF2(double *lat, double *lon, double *year, double *month, double *day, \
-				double *hour, double *min, double *sec, int l0, int err)
+double * HmF2(double *lat, double *lon, int *year, int *month, int *day, \
+				int *hour, int *min, int *sec, int l0, int err)
 {
 	//set variables
 	double *output; //NmF2 output, length = l0
@@ -278,7 +278,7 @@ double * HmF2(double *lat, double *lon, double *year, double *month, double *day
 	mlon = (double *)calloc(l0, sizeof(double));
 	
 	//set the directory from the config file
-	getDir();
+//	getDir();
 	
 	//sqlite3 variables
 	char cwd[1024]; //directory, sql error
@@ -373,8 +373,8 @@ double * HmF2(double *lat, double *lon, double *year, double *month, double *day
 
 //routine to get and return HmF1 for a given location and time
 //arrays are the same length l0
-double * HmF1(double *lat, double *lon, double *year, double *month, double *day, \
-				double *hour, double *min, double *sec, int l0, int err)
+double * HmF1(double *lat, double *lon, int *year, int *month, int *day, \
+				int *hour, int *min, int *sec, int l0, int err)
 {
 	//set variables
 	double *r; //return from calcMF2
@@ -385,7 +385,7 @@ double * HmF1(double *lat, double *lon, double *year, double *month, double *day
 	mlt = (double *)calloc(l0, sizeof(double));
 	
 	//set the directory from the config file
-	getDir();
+//	getDir();
 	
 	//sqlite3 variables
 	char cwd[1024]; //directory, sql error

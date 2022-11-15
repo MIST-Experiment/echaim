@@ -5,7 +5,8 @@
 //Functions to get the D-region DB data
 
 static double *tempCallback; //pointer to the indices to be returned by the functions
-int cbc; //callback counter
+//extern fixes multiple definitions error
+extern int cbc; //callback counter
 
 //declare static function
 static int callbackGetIndices(void *data, int argc, char **argv, char **azColName);

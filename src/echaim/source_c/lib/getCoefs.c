@@ -12,7 +12,8 @@
 //*************************
 
 static double *tempCallback, **tempCallbackMF2; //pointers to the indices to be returned by the functions
-int cbc; //callback counter
+//extern fixes multiple definitions error
+extern int cbc; //callback counter
 
 //declare static functions
 static int callback(void *data, int argc, char **argv, char **azColName);

@@ -29,9 +29,9 @@
 //returns density along a given arc
 //inputs are latitudes, longitudes, altitudes, times (length l0)
 //output is an array [legnth l0]
-double * densityPath(double *lat, double *lon, double *alt, \
-						double *year, double *month, double *day, \
-						double *hour, double *min, double *sec, int storm, int precip, int dregion, int l0, int err)
+double * densityPath(double *lat, double *lon, double *alt,
+                     int *year, int *month, int *day,
+                     int *hour, int *min, int *sec, int storm, int precip, int dregion, int l0, int err)
 {
 	//set variables
 	double *output; //density profile output, length = [l0,l1,l2]
@@ -48,7 +48,7 @@ double * densityPath(double *lat, double *lon, double *alt, \
 	mlt = (double *) calloc(l0, sizeof(double));
 
 	//set the directory from the config file
-	getDir();
+//	getDir();
 	
 	//sqlite3 variables
 	char cwd[1024]; //directory, sql error

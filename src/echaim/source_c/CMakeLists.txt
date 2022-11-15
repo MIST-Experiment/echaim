@@ -6,9 +6,8 @@ set (project_name
 #Project name
 project (${project_name})
 
-#message ("${PROJECT_SOURCE_DIR}")
-#include_directories (../include "${PROJECT_SOURCE_DIR}/source")
-#include_directories (../include)
+
+include_directories (../include)
 
 #add_subdirectory(test_app/)
 
@@ -60,6 +59,8 @@ set(LIB_SOURCES
         lib/python_api.c
 	)
 
+set_source_files_properties(lib/sqlite3.c PROPERTIES COMPILE_OPTIONS "-DSQLITE_THREADSAFE=2")
+
 
 #create the shared library
 add_library (${project_name} SHARED ${LIB_SOURCES})
@@ -67,7 +68,7 @@ add_executable(ECHAIM_test test_app/test.c)
 
 #Link the curl library
 target_link_libraries(${project_name} curl)
-target_link_libraries(ECHAIM_test ${project_name})
+target_link_libraries(ECHAIM_test ${project_name} m)
 
 find_package(OpenMP)
 message("${OPENMP_FOUND}")

@@ -30,7 +30,7 @@ int updateLocalDB (int force)
 	char dirDB[1024];
 	
 	//set the directory from the config file
-	getDir();
+//	getDir();
 	
 	//set file name and directory
 	strcpy(dirDB,DIR);

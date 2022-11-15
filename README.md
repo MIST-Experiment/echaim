@@ -1,2 +1,2 @@
 # echaim
-Unofficial Python interface to ECHAIM model (under development).
+A Python interface to ECHAIM model (under development).

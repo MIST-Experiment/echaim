@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "echaim"
-version = "0.1.1.dev"
+version = "0.1.2.dev"
 description = ""
 authors = ["lap1dem <vadym.bidula@gmail.com>"]
 readme = "README.md"

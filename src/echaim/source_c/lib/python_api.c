@@ -34,10 +34,8 @@ void pyDensityProfile(double *np_output, char *datadir, double *lat, double *lon
                                      sec, storm, precip, dregion, l0, alt, l1, err);
 
     for (int i = 0; i < l0; i++){
-        print_d_array(output[i], l1);
         memcpy(np_output + l1*i, output[i], sizeof(double) * l1);
     }
-    printf("%d", l0);
 //    memcpy(np_output, output[0], sizeof(double) * l1);
     free(output);
 }

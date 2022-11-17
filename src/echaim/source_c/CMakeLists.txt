@@ -7,7 +7,7 @@ set (project_name
 project (${project_name})
 
 
-include_directories (../include)
+#include_directories (../include)
 
 #add_subdirectory(test_app/)
 
@@ -60,7 +60,7 @@ set(LIB_SOURCES
 	)
 
 
-#set_source_files_properties(lib/sqlite3.c PROPERTIES COMPILE_OPTIONS "-DSQLITE_THREADSAFE=2")
+set_source_files_properties(lib/sqlite3.c PROPERTIES COMPILE_OPTIONS "-DSQLITE_THREADSAFE=2")
 
 #create the shared library
 add_library (${project_name} SHARED ${LIB_SOURCES})

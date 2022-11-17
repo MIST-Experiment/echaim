@@ -15,7 +15,7 @@
 
 void print_d_array(double *arr, int len) {
     for (int j = 0; j < len; j++) {
-        printf("%f ", arr[j]);
+        printf("%4.3e ", arr[j]);
     }
     printf("\n");
 }
@@ -24,7 +24,7 @@ void print_i_array(int *arr, int len) {
     for (int j = 0; j < len; j++) {
         printf("%i ", arr[j]);
     }
-    printf("\n");
+    printf("\n\n");
 }
 
 void pyDensityProfile(double *np_output, char *datadir, double *lat, double *lon, int *year, int *month, int *day, int *hour,
@@ -33,12 +33,12 @@ void pyDensityProfile(double *np_output, char *datadir, double *lat, double *lon
     double **output = densityProfile(lat, lon, year, month, day, hour, min,
                                      sec, storm, precip, dregion, l0, alt, l1, err);
 
-    for (int i = 0; i < l0; i++){
-        memcpy(np_output + l1*i, output[i], sizeof(double) * l1);
+    for (int i = 0; i < l0; i++) {
+        memcpy(np_output + l1 * i, output[i], sizeof(double) * l1);
     }
-//    memcpy(np_output, output[0], sizeof(double) * l1);
     free(output);
 }
+
 
 void pyNmF2(double *np_output, char *datadir, double *lat, double *lon, int *year, int *month, int *day, \
 				int *hour, int *min, int *sec, int l0, int err){

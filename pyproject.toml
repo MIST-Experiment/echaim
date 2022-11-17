@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "echaim"
-version = "0.1.2.dev"
+version = "0.1.4.dev"
 description = ""
 authors = ["lap1dem <vadym.bidula@gmail.com>"]
 readme = "README.md"
@@ -14,6 +14,7 @@ tqdm = "^4.64.1"
 
 [tool.poetry.group.dev.dependencies]
 setuptools-cpp = "^0.1.0"
+jupyter = "^1.0.0"
 
 [build-system]
 requires = ["cmake", "poetry-core",  "wheel", "setuptools-cpp"]

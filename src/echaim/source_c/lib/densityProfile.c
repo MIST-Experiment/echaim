@@ -60,7 +60,7 @@ double ** densityProfile(double *lat, double *lon, int *year, int *month, int *d
     char cwd[1024]; //directory, sql error
     sqlite3 *db, *dbCoefs; //SQLite3 database variable
 
-    //setting directory
+            //setting directory
     strcpy(cwd,DIR);
 
     //get working directory and append database filename to the end
@@ -81,7 +81,7 @@ double ** densityProfile(double *lat, double *lon, int *year, int *month, int *d
     if (rc) {printf("Error: COEFS_DB could not be opened\n");}
 
     //allocate memory for output
-    output = (double **) malloc(sizeof(double *)*l0);
+    output = (double **) malloc(sizeof(double *) * l0);
 
     for (int i=0; i<l0; i++) {
         output[i] = (double *) malloc(sizeof(double) * l1);

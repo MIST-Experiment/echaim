@@ -4,12 +4,12 @@ from os.path import join as jpath
 
 import numpy as np
 
-echaimlib_path = os.path.join(
-    os.path.dirname(os.path.realpath(__file__)),
-    "source_c/cmake-build-debug"
-)
-#
-# echaimlib_path = os.path.dirname(os.path.abspath(__file__))
+# echaimlib_path = os.path.join(
+#     os.path.dirname(os.path.realpath(__file__)),
+#     "source_c/cmake-build-debug"
+# )
+
+echaimlib_path = os.path.dirname(os.path.abspath(__file__))
 
 
 def _import_libs():

@@ -8,8 +8,20 @@ from .echaimlib import echaimlib
 from collections.abc import Collection
 
 
-def density_profile(lats: np.ndarray, lons: np.ndarray, alts: np.ndarray, dt: datetime | Collection, storm: bool = True,
+def density_profile(lats: np.ndarray, lons: np.ndarray, alts: np.ndarray, dt: datetime | Collection, storm: bool = False,
                     precip: bool = True, dregion: bool = True) -> np.ndarray:
+    """
+    Calculate altitude profile of electron density.
+
+    :param lats: Array of latitudes.
+    :param lons: Array of longitudes.
+    :param alts: Array of altitudes.
+    :param dt: A single datetime object or a sequence of datetime objects.
+    :param storm: Enable model of NmF2 storm perturbation (not always available).
+    :param precip: Enable precipitation model.
+    :param dregion: Enable D-region model.
+    :return: 2D numpy array with dimensions [len(lats) x len(alts)].
+    """
     if alts.ndim != 1:
         raise ValueError("Array of altitudes must be 1D")
     l1 = c_int(len(alts))
@@ -36,8 +48,20 @@ def density_profile(lats: np.ndarray, lons: np.ndarray, alts: np.ndarray, dt: da
     return output.reshape((len(lats), len(alts)))
 
 
-def density_path(lats: np.ndarray, lons: np.ndarray, alts: np.ndarray, dt: datetime, storm: bool = True,
+def density_path(lats: np.ndarray, lons: np.ndarray, alts: np.ndarray, dt: datetime | Collection, storm: bool = False,
                  precip: bool = True, dregion: bool = True) -> np.ndarray:
+    """
+    Calculate electron density on the specified path.
+
+    :param lats: Array of latitudes.
+    :param lons: Array of longitudes.
+    :param alts: Array of altitudes.
+    :param dt: A single datetime object or a sequence of datetime objects.
+    :param storm: Enable model of NmF2 storm perturbation (not always available).
+    :param precip: Enable precipitation model.
+    :param dregion: Enable D-region model.
+    :return: 1D numpy array of shape len(lats).
+    """
     lats = lats.astype(np.float64)
     lons = lons.astype(np.float64)
     alts = alts.astype(np.float64)

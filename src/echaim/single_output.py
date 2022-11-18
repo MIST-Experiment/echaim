@@ -12,8 +12,8 @@ def nmf2(lats: np.ndarray, lons: np.ndarray, dt: datetime | Collection) -> np.nd
     """
     Calculate NmF2 index.
 
-    :param lats: Array of latitudes.
-    :param lons: Array of longitudes.
+    :param lats: Array of latitudes in [deg].
+    :param lons: Array of longitudes in [deg].
     :param dt: A single datetime object or a sequence of datetime objects.
     :return: 1D numpy array with shape len(lats).
     """
@@ -37,8 +37,8 @@ def nmf2_storm(lats: np.ndarray, lons: np.ndarray, dt: datetime | Collection) ->
     """
     Calculate NmF2 index using storm perturbation model.
 
-    :param lats: Array of latitudes.
-    :param lons: Array of longitudes.
+    :param lats: Array of latitudes in [deg].
+    :param lons: Array of longitudes in [deg].
     :param dt: A single datetime object or a sequence of datetime objects.
     :return: 1D numpy array with shape len(lats).
     """
@@ -62,8 +62,8 @@ def hmf2(lats: np.ndarray, lons: np.ndarray, dt: datetime | Collection) -> np.nd
     """
     Calculate HmF2 index.
 
-    :param lats: Array of latitudes.
-    :param lons: Array of longitudes.
+    :param lats: Array of latitudes in [deg].
+    :param lons: Array of longitudes in [deg].
     :param dt: A single datetime object or a sequence of datetime objects.
     :return: 1D numpy array with shape len(lats).
     """
@@ -87,8 +87,8 @@ def hmf1(lats: np.ndarray, lons: np.ndarray, dt: datetime | Collection) -> np.nd
     """
     Calculate HmF1 index.
 
-    :param lats: Array of latitudes.
-    :param lons: Array of longitudes.
+    :param lats: Array of latitudes in [deg].
+    :param lons: Array of longitudes in [deg].
     :param dt: A single datetime object or a sequence of datetime objects.
     :return: 1D numpy array with shape len(lats).
     """

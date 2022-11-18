@@ -13,9 +13,9 @@ def density_profile(lats: np.ndarray, lons: np.ndarray, alts: np.ndarray, dt: da
     """
     Calculate altitude profile of electron density.
 
-    :param lats: Array of latitudes.
-    :param lons: Array of longitudes.
-    :param alts: Array of altitudes.
+    :param lats: Array of latitudes in [deg].
+    :param lons: Array of longitudes in [deg].
+    :param alts: Array of altitudes in [km].
     :param dt: A single datetime object or a sequence of datetime objects.
     :param storm: Enable model of NmF2 storm perturbation (not always available).
     :param precip: Enable precipitation model.
@@ -53,9 +53,9 @@ def density_path(lats: np.ndarray, lons: np.ndarray, alts: np.ndarray, dt: datet
     """
     Calculate electron density on the specified path.
 
-    :param lats: Array of latitudes.
-    :param lons: Array of longitudes.
-    :param alts: Array of altitudes.
+    :param lats: Array of latitudes in [deg].
+    :param lons: Array of longitudes in [deg].
+    :param alts: Array of altitudes in [km].
     :param dt: A single datetime object or a sequence of datetime objects.
     :param storm: Enable model of NmF2 storm perturbation (not always available).
     :param precip: Enable precipitation model.

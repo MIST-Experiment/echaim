@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from collections.abc import Collection
 from ctypes import *
 from datetime import datetime

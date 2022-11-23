@@ -55,7 +55,7 @@ set(LIB_SOURCES
         lib/nrlmsise-00_data.c
         lib/nrlmsise00.c
         lib/runNRLMSISE.c
-        lib/updateLocalDB.c
+#        lib/updateLocalDB.c
         lib/python_api.c
 	)
 
@@ -67,7 +67,7 @@ add_library (${project_name} SHARED ${LIB_SOURCES})
 #add_executable(ECHAIM_test test_app/test.c)
 
 #Link the curl library
-target_link_libraries(${project_name} curl)
+#target_link_libraries(${project_name} curl)
 #target_link_libraries(ECHAIM_test ${project_name} m)
 
 #find_package(OpenMP)

@@ -82,7 +82,7 @@ void pyDensityPath(double *np_output, char *datadir, double *lat, double *lon, d
     free(output);
 }
 
-void update_database(int * result, char * datadir, int force){
-    strcpy(DIR, datadir);
-    * result = updateLocalDB(force);
-}
+//void update_database(int * result, char * datadir, int force){
+//    strcpy(DIR, datadir);
+//    * result = updateLocalDB(force);
+//}

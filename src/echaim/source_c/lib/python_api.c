@@ -8,10 +8,7 @@
 #include <string.h>
 #include "sqlite3.h"
 #include "ECHAIM.h"
-#include "getDir.h"
 #include "global.h"
-
-#include <omp.h>
 
 void print_d_array(double *arr, int len) {
     for (int j = 0; j < len; j++) {

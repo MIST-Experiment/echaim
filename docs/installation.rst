@@ -3,22 +3,11 @@ Installation
 
 ..
 
-The ``echaim`` can be compiled only on Linux systems.
-If you are using Windows - consider installing `WSL <https://docs.microsoft.com/en-us/windows/wsl/install>`_.
+The ``echaim`` package build is tested only on Linux and OS X systems. The build is confirmed to work on Windows
+if your default C compiler is `MinGW <https://www.mingw-w64.org/>`_. If you are having troubles with installing it
+on Windows - consider using `WSL <https://docs.microsoft.com/en-us/windows/wsl/install>`_.
 
-Before installing the ``echaim`` pakage you need preinstalled:
-
-1) `CMAKE <https://cmake.org/>`_
-
-.. code-block::
-
-    sudo apt install cmake
-
-2) Curl dev version (curl.h), for example
-
-.. code-block::
-
-    sudo apt install libcurl4-openssl-dev
+Impotant! Before installing the ``echaim`` pakage you need to install `CMAKE <https://cmake.org/>`_.
 
 Now you can simply install ``echaim`` using ``pip`` or any other package manager::
 

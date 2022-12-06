@@ -7,7 +7,7 @@ Longitude profiles of hmF2 and hmF1
     from datetime import datetime
     import matplotlib.pyplot as plt
 
-    from src.echaim import hmf1, hmf2
+    from echaim import hmf1, hmf2
 
     # Defining date of observation
     dt = datetime(year=2015, month=4, day=9, hour=17, minute=45)

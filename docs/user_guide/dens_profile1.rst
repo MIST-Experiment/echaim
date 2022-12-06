@@ -6,6 +6,7 @@ Altitude profile of electron density
     import numpy as np
     from datetime import datetime
     import matplotlib.pyplot as plt
+
     from echaim import density_profile
 
     # Defining date of observation

@@ -7,7 +7,7 @@ Latitude profile of electron density
     from datetime import datetime
     import matplotlib.pyplot as plt
 
-    from src.echaim import density_path
+    from echaim import density_path
 
     # Defining date of observation
     dt = datetime(year=2016, month=5, day=15, hour=12, minute=30)

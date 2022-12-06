@@ -5,11 +5,15 @@ import numpy as np
 from .echaimlib import echaimlib
 
 
-# def update_echaim_data(force: bool = False):
-#     result = c_int(-1)
-#     print("Updating E-CHAIM database...")
-#     echaimlib.update_database(byref(result), DATADIR.encode("utf-8"), c_int(force))
-#     if result.value == 0 or result.value == 3:
-#         print("The E-CHAIM database was updated.")
-#     else:
-#         print("The E-CHAIM database was not updated. Try forcing the update.")
+def update():
+    from urllib import request, error
+    import os
+    location = os.path.dirname(os.path.abspath(__file__))
+    try:
+        request.urlretrieve(
+            'https://chain-new.chain-project.net/echaim_downloads/DBFiles/CHAIM_DB.db',
+            os.path.join(location, f'model_data/CHAIM_DB.db')
+        )
+        print('The index data was successfully updated!')
+    except error.URLError:
+        print('Something went wrong. Check internet connection.')

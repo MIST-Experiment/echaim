@@ -6,11 +6,6 @@ set (project_name
 #Project name
 project (${project_name})
 
-
-#include_directories (../include)
-
-#add_subdirectory(test_app/)
-
 set(LIB_SOURCES
         lib/aacgmlib_v2.c
         lib/astalglib.c
@@ -55,7 +50,6 @@ set(LIB_SOURCES
         lib/nrlmsise-00_data.c
         lib/nrlmsise00.c
         lib/runNRLMSISE.c
-#        lib/updateLocalDB.c
         lib/python_api.c
 	)
 
@@ -64,19 +58,6 @@ set_source_files_properties(lib/sqlite3.c PROPERTIES COMPILE_OPTIONS "-DSQLITE_T
 
 #create the shared library
 add_library (${project_name} SHARED ${LIB_SOURCES})
-#add_executable(ECHAIM_test test_app/test.c)
-
-#Link the curl library
-#target_link_libraries(${project_name} curl)
-#target_link_libraries(ECHAIM_test ${project_name} m)
-
-#find_package(OpenMP)
-#message("${OPENMP_FOUND}")
-#if (OPENMP_FOUND)
-#	set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
-#	set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
-#	set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
-#endif()
 
 #change the runtime output directory
 get_filename_component(PARENT_DIR CMake DIRECTORY)

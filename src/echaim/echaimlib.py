@@ -6,20 +6,17 @@ from os.path import join as jpath
 from ctypes import CDLL
 
 import numpy as np
-import distutils.ccompiler
 
-_lib_ext = distutils.ccompiler.new_compiler().shared_lib_extension
+# echaimlib_path = os.path.join(
+#     os.path.dirname(os.path.realpath(__file__)),
+#     "source_c/cmake-build-debug"
+# )
 
-echaimlib_path = os.path.join(
-    os.path.dirname(os.path.realpath(__file__)),
-    "source_c/cmake-build-debug"
-)
-
-# echaimlib_path = os.path.dirname(os.path.abspath(__file__))
+echaimlib_path = os.path.dirname(os.path.abspath(__file__))
 
 
 def _import_libs():
-    echaimlib = CDLL(jpath(echaimlib_path, "libECHAIM"+_lib_ext))
+    echaimlib = np.ctypeslib.load_library("libECHAIM", echaimlib_path)
     return echaimlib
 
 

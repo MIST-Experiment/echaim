@@ -14,3 +14,7 @@ Now you can simply install ``echaim`` using ``pip`` or any other package manager
     python3 -m pip install echaim
 
 
+Currently, the package does not update the index database automatically. You can (and should) do it manually
+by calling the ``update()`` function::
+
+    from echaim import update; update()

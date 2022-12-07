@@ -18,6 +18,11 @@ a function of solar F10.7 cm flux and IG ionospheric index.
 
 The model papers include: :cite:t:`Themens2019`, :cite:t:`Themens2018`, :cite:t:`Themens2017`
 
+Version
+-------
+The current version of the package uses Version 3.2.4 of the C source code.
+
+
 References
 ----------
 .. bibliography::

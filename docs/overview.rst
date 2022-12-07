@@ -20,7 +20,7 @@ The model papers include: :cite:t:`Themens2019`, :cite:t:`Themens2018`, :cite:t:
 
 Version
 -------
-The current version of the package uses Version 3.2.4 of the C source code.
+The current version of the package uses `Version 3.2.4 of the C source code <https://chain-new.chain-project.net/index.php/projects/chaim/e-chaim>`_.
 
 
 References

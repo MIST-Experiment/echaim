@@ -16,13 +16,13 @@ echaimlib_path = os.path.dirname(os.path.abspath(__file__))
 
 
 def _import_libs():
-    echaimlib = np.ctypeslib.load_library("libECHAIM", echaimlib_path)
+    echaimlib = np.ctypeslib.load_library("libechaim", echaimlib_path)
     return echaimlib
 
 
 def _move_libs():
     parent_dir = os.path.abspath(jpath(echaimlib_path, '..'))
-    libs = glob.glob(jpath(parent_dir, 'libECHAIM*'))
+    libs = glob.glob(jpath(parent_dir, 'libechaim*'))
     for lib in libs:
         parent, file = os.path.split(lib)
         os.rename(lib, jpath(parent, 'echaim', file))
